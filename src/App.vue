@@ -1,28 +1,19 @@
-<template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-  </div>
+<template lang="pug">
+<!-- #app(:style="{'padding-top': app-padding}")
+spinner(:is-loading="main_spinner" :is-relative="false")
+error-msg(:show-error="show-error")
+app-header(:style="{'height': app-padding}")
+.container.container--main
+router-view(key="$route.fullPath") -->
+  <div id="app">Hello</div>
 </template>
 
-<script>
-import HelloWorld from "./components/HelloWorld.vue";
+<script></script>
 
-export default {
-  name: "App",
-  components: {
-    HelloWorld
-  }
-};
-</script>
-
-<style>
+<style lang="scss">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
 }
 </style>

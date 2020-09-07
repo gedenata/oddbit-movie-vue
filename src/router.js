@@ -10,7 +10,7 @@ export default new Router({
   routes: [
     {
       path: "*",
-      component: () => import("")
+      component: () => import("./views/Error.vue")
     },
     {
       path: "/",
