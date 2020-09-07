@@ -1,6 +1,7 @@
-<template lang="pug">
-.not-found
-  h4.animated.fadeInDown 404 | Page not found
+<template>
+  <div class="not-found">
+    <h4 class="animated fadeInDown">404 | Page not found</h4>
+  </div>
 </template>
 
 <script>

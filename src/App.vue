@@ -1,11 +1,12 @@
-<template lang="pug">
-<!-- #app(:style="{'padding-top': app-padding}")
-spinner(:is-loading="main_spinner" :is-relative="false")
-error-msg(:show-error="show-error")
-app-header(:style="{'height': app-padding}")
-.container.container--main
-router-view(key="$route.fullPath") -->
-  <div id="app">Hello</div>
+<template>
+  <div id="app" :style="{ 'padding-top': app_padding }">
+    <spinner :is-loading="main_spinner" :is-relative="false"></spinner>
+    <error-msg :show-error="show_error"></error-msg>
+    <app-header :style="{ height: app_padding }"></app-header>
+    <div class="container container--main">
+      <router-view key="$route.fullPath"></router-view>
+    </div>
+  </div>
 </template>
 
 <script>

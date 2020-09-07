@@ -32,16 +32,21 @@
     </ul>
     <ul class="genres-list" v-show="details.genres">
       <li class="title"><b>Genres</b></li>
-      <li v-for="item in details.genres">
+      <li v-for="item in details.genres" v-bind:key="item.id">
         <span class="tag">{{ item.name }}</span>
       </li>
     </ul>
     <similar :id="id"></similar>
     <ul class="production-list" v-show="details.production_companies">
       <li class="title"><b>Production companies</b></li>
-      <li v-for="item in details.production_companies">
+      <li v-for="item in details.production_companies" v-bind:key="item.id">
         <template v-if="item.logo_path">
-          <poster class="thumb" :src="item.logo_path" size="xs" :fade-on-hover="false"></poster>
+          <poster
+            class="thumb"
+            :src="item.logo_path"
+            size="xs"
+            :fade-on-hover="false"
+          ></poster>
         </template>
         <template v-else>
           <div class="name">{{ item.name }}</div>

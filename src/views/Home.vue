@@ -1,7 +1,11 @@
 <template>
   <section>
     <ul class="popular row m-0">
-      <li class="col-6 col-sm-6 col-md-4 col-lg-3" v-for="(item, index) in popularItems">
+      <li
+        class="col-6 col-sm-6 col-md-4 col-lg-3"
+        v-for="item in popularItems"
+        v-bind:key="item.id"
+      >
         <popular :item="item" :key="item.id"></popular>
       </li>
     </ul>
@@ -15,14 +19,14 @@ import { mapGetters } from "vuex";
 
 import Popular from "~/components/Popular";
 import Spinner from "~/components/Spinner";
-import Sorting from "~/components/Sorting";
+// import Sorting from "~/components/Sorting";
 
 export default {
   name: "home",
   components: {
     Popular,
-    Spinner,
-    Sorting
+    Spinner
+    // Sorting
   },
   data: () => ({
     enableLoading: true
