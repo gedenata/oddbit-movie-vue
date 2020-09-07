@@ -12,8 +12,16 @@
 <script>
 import { mapGetters } from "vuex";
 
+import AppHeader from "@/components/AppHeader";
+import Spinner from "@/components/Spinner";
+import ErrorMsg from "@/components/ErrorMsg";
+
 export default {
-  components: {},
+  components: {
+    AppHeader,
+    Spinner,
+    ErrorMsg
+  },
   computed: {
     ...mapGetters(["main_spinner", "show_error", "app_padding"])
   },

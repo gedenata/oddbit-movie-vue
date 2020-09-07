@@ -33,8 +33,8 @@
 import { mapGetters } from "vuex";
 import { Carousel, Slide } from "vue-carousel";
 
-import Popular from "~/components/Popular";
-import SimilarSort from "~/components/SimilarSort";
+import Popular from "@/components/Popular";
+import SimilarSort from "@/components/SimilarSort";
 
 export default {
   name: "similar",
