@@ -1,4 +1,4 @@
-<template lang="pug">
+<template>
   <div class="details">
     <h2>{{ details.title }}</h2>
     <div class="info">
