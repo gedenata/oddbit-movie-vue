@@ -70,10 +70,6 @@ export default new Vuex.Store({
     GET_CONFIGURATION(state, payload) {
       state.payload = payload;
     },
-    GET_FILMS(state, payload) {
-      const { key, data } = payload;
-      state[key] = data.results;
-    },
     GET_DETAILS(state, payload) {
       state.details = payload;
     },
@@ -135,6 +131,19 @@ export default new Vuex.Store({
       const url = `movie/${id}/similar`;
       const { data } = await Http.get(url);
       commit("GET_SIMILAR", data.results);
+      dispatch("TOGGLE", { main_spinner: false });
+    },
+    async GET_FILMS({ dispatch, commit, getters }, payload) {
+      const { url, key, params, clear } = payload;
+      const query_params = { page: clear ? 1 : getters.page, ...params };
+      if (clear) dispatch("CLEAR_FILMS", key);
+      try {
+        const { data } = await Http.get(url, { params: query_params });
+        commit("SET_FILMS", { key, data });
+      } catch (e) {
+        dispatch("SHOW_ERROR");
+      }
+      if (!getters.main_spinner) return;
       dispatch("TOGGLE", { main_spinner: false });
     },
     IMG_SETTINGS({ commit }, payload) {
