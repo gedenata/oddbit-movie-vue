@@ -21,6 +21,7 @@ export default new Router({
     },
     {
       path: "/movie/:id",
+      name: "movie",
       component: () => import("./views/Movie.vue")
     }
   ]

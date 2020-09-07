@@ -41,17 +41,17 @@ export default new Vuex.Store({
     app_padding: state => state.app_padding
   },
   mutations: {
-    SET_IMG_SETTINGS(state, payload) {
-      const {
-        base_url,
-        logo_size,
-        poster_size,
-        backdrop_size
-      } = payload.images;
-      state.base_url = base_url;
-      state.logo_size = logo_size[1];
-      state.thumb_size = poster_size[3];
-      state.poster_size = backdrop_size[3];
+    SET_IMG_SETTINGS() {
+      // const {
+      //   base_url,
+      //   logo_size,
+      //   poster_size,
+      //   backdrop_size
+      // } = payload.images;
+      // state.base_url = base_url;
+      // state.logo_size = logo_size[1];
+      // state.thumb_size = poster_size[3];
+      // state.poster_size = backdrop_size[3];
     },
     SET_GENRES_OPTIONS(state, payload) {
       state.genres_options = payload;
