@@ -12,6 +12,7 @@ export default new Router({
   routes: [
     {
       path: "*",
+      name: "404",
       component: () => import("./views/Error.vue")
     },
     {
