@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const api = axios.create({
+const Http = axios.create({
   baseURL: "https://api.themoviedb.org/3",
   params: {
     language: "en-US",
@@ -11,4 +11,4 @@ const api = axios.create({
   }
 });
 
-export default api;
+export default Http;
