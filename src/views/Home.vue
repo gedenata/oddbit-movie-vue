@@ -17,8 +17,8 @@
 import _ from "lodash";
 import { mapGetters } from "vuex";
 
-import Popular from "@/components/Popular";
-import Spinner from "@/components/Spinner";
+import Popular from "./../components/Popular";
+import Spinner from "./../components/Spinner";
 
 export default {
   name: "home",

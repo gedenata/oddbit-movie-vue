@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import Http from "@/api";
+import Http from "./../api";
 
 export default {
   data: () => ({

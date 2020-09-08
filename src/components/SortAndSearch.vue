@@ -39,8 +39,8 @@
 </template>
 
 <script>
-import Search from "@/components/Search";
-import Sorting from "@/components/Sorting";
+import Search from "./Search";
+import Sorting from "./Sorting";
 
 export default {
   props: {

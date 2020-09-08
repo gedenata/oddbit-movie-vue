@@ -11,8 +11,8 @@
 </template>
 
 <script>
-import Logo from "@/components/Logo";
-import SortAndSearch from "@/components/SortAndSearch";
+import Logo from "./Logo";
+import SortAndSearch from "./SortAndSearch";
 
 export default {
   components: {

@@ -16,8 +16,8 @@
 </template>
 
 <script>
-import filters from "@/filters";
-import Poster from "@/components/Poster";
+import filters from "./../filters";
+import Poster from "./Poster";
 
 export default {
   name: "popular",

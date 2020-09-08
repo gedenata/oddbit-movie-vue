@@ -60,8 +60,8 @@
 import { mapState } from "vuex";
 import filters from "@/filters";
 
-import Poster from "@/components/Poster";
-import Similar from "@/components/Similar";
+import Poster from "./../components/Poster";
+import Similar from "./../components/Similar";
 
 export default {
   name: "movie",
