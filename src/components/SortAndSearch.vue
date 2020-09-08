@@ -207,17 +207,17 @@ export default {
   }
 
   &--sort {
-    background-image: url(./../assets/sort.svg);
+    background-image: url(../assets/sort.svg);
   }
 
   &--search {
     background-size: 16px;
-    background-image: url(./../assets/search.svg);
+    background-image: url(../assets/search.svg);
   }
 
   &--close {
     background-size: 20px;
-    background-image: url(./../assets/cancel.svg);
+    background-image: url(../assets/cancel.svg);
     background-color: lightgray;
   }
 }

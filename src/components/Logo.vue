@@ -1,6 +1,6 @@
 <template>
   <router-link class="logo" :to="to" @click.native="logoClick">
-    <img class="logo__img" src="@/assets/logo.svg" />
+    <img class="logo__img" src="../assets/logo.svg" />
     <span class="logo__text">Only movies</span>
   </router-link>
 </template>

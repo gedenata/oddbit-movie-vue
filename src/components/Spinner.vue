@@ -96,4 +96,41 @@ export default {
     content: "";
   }
 }
+
+.spinner {
+  display: flex;
+  font-size: 26px;
+  position: relative;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+
+  > span {
+    width: 30px;
+    height: 30px;
+    margin: 0 5px;
+    border-radius: 50%;
+    display: inline-block;
+    animation: bouncedelay 1.4s infinite ease-in-out both;
+
+    &.one {
+      animation-delay: -0.32s;
+    }
+    &.two {
+      animation-delay: -0.16s;
+    }
+  }
+}
+
+@keyframes bouncedelay {
+  0%,
+  80%,
+  100% {
+    transform: scale(0);
+  }
+
+  40% {
+    transform: scale(1);
+  }
+}
 </style>

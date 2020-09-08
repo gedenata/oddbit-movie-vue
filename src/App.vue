@@ -1,8 +1,8 @@
 <template>
-  <div id="app" :style="{ 'padding-top': app_padding }">
+  <div id="app" :style="{ 'padding-top': appPadding }">
     <spinner :is-loading="main_spinner" :is-relative="false"></spinner>
-    <error-msg :show-error="show_error"></error-msg>
-    <app-header :style="{ height: app_padding }"></app-header>
+    <error-msg :show-error="showError"></error-msg>
+    <app-header :style="{ height: appPadding }"></app-header>
     <div class="container container--main">
       <router-view key="$route.fullPath"></router-view>
     </div>
@@ -23,12 +23,28 @@ export default {
     ErrorMsg
   },
   computed: {
-    ...mapGetters(["main_spinner", "show_error", "app_padding"])
+    ...mapGetters(["main_spinner", "showError", "appPadding"])
   },
   created() {
     this.$store.dispatch("GET_CONFIGURATION");
   },
-  mounted() {}
+  mounted() {
+    let body = document.body,
+      timer;
+    window.addEventListener(
+      "scroll",
+      () => {
+        clearTimeout(timer);
+        if (!body.classList.contains("disable-hover")) {
+          body.classList.add("disable-hover");
+        }
+        timer = setTimeout(() => {
+          body.classList.remove("disable-hover");
+        }, 500);
+      },
+      false
+    );
+  }
 };
 </script>
 

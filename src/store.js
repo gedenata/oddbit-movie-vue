@@ -14,44 +14,29 @@ export default new Vuex.Store({
     similar: null,
     films: null,
     main_spinner: true,
-    enable_loading: true,
+    enableLoading: true,
     loading_spinner: false,
-    show_error: false,
-    toggle_sort: false,
+    showError: false,
+    toggleSort: false,
     page: 1,
-    page_number: 1,
+    pageNumber: 1,
     popular: [],
     details: {},
     sort_options: { sort_by: "popularity.desc" },
-    app_padding: "64px"
-  },
-  getters: {
-    base_url: state => state.base_url,
-    popular: state => state.popular,
-    enable_loading: state => state.enable_loading,
-    page_number: state => state.page_number,
-    films: state => state.films,
-    show_error: state => state.show_error,
-    main_spinner: state => state.main_spinner,
-    page: state => state.page,
-    sort_options: state => state.sort_options,
-    popular_not_empty: state => state.popular.length > 0,
-    similar: state => state.similar,
-    toggle_sort: state => state.toggle_sort,
-    app_padding: state => state.app_padding
+    appPadding: "64px"
   },
   mutations: {
-    SET_IMG_SETTINGS() {
-      // const {
-      //   base_url,
-      //   logo_size,
-      //   poster_size,
-      //   backdrop_size
-      // } = payload.images;
-      // state.base_url = base_url;
-      // state.logo_size = logo_size[1];
-      // state.thumb_size = poster_size[3];
-      // state.poster_size = backdrop_size[3];
+    SET_IMG_SETTINGS(state, payload) {
+      const {
+        base_url,
+        poster_size,
+        backdrop_size,
+        logo_size
+      } = payload.images;
+      state.base_url = base_url;
+      state.poster_size = backdrop_size[3];
+      state.thumb_size = poster_size[3];
+      state.logo_size = logo_size[1];
     },
     SET_GENRES_OPTIONS(state, payload) {
       state.genres_options = payload;
@@ -65,7 +50,7 @@ export default new Vuex.Store({
       state.page += 1;
     },
     SET_APP_PADDING(state, payload) {
-      state.app_padding = payload;
+      state.appPadding = payload;
     },
     GET_CONFIGURATION(state, payload) {
       state.payload = payload;
@@ -90,14 +75,29 @@ export default new Vuex.Store({
       Object.keys(payload).map(key => (state[key] = payload[key]));
     },
     TOGGLE_SORT(state) {
-      state.toggle_sort = !state.toggle_sort;
+      state.toggleSort = !state.toggleSort;
     },
     LOADING_LOCKED(state, payload) {
-      state.enable_loading = payload;
+      state.enableLoading = payload;
     },
     SHOW_ERROR_SCREEN(state) {
-      state.show_error = true;
+      state.showError = true;
     }
+  },
+  getters: {
+    base_url: state => state.base_url,
+    popular: state => state.popular,
+    enableLoading: state => state.enableLoading,
+    pageNumber: state => state.pageNumber,
+    films: state => state.films,
+    showError: state => state.showError,
+    main_spinner: state => state.main_spinner,
+    page: state => state.page,
+    sort_options: state => state.sort_options,
+    popular_not_empty: state => state.popular.length > 0,
+    similar: state => state.similar,
+    toggleSort: state => state.toggleSort,
+    appPadding: state => state.appPadding
   },
   actions: {
     GET_GENRES_OPTIONS({ commit }, payload) {

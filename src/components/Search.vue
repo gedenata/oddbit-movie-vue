@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import Http from "./../api";
+import Http from "@/api";
 
 export default {
   data: () => ({
@@ -107,11 +107,11 @@ export default {
   background-position: center;
   background-repeat: no-repeat;
   background-repeat: no-repeat;
-  background-image: url("./../assets/cancel.svg");
+  background-image: url("../assets/cancel.svg");
 
   &--active {
     background-size: 50%;
-    background-image: url("./../assets/search.svg");
+    background-image: url("../assets/search.svg");
   }
 }
 

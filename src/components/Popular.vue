@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import filters from "./../filters";
+import filters from "@/filters";
 import Poster from "@/components/Poster";
 
 export default {
@@ -63,6 +63,13 @@ export default {
 .popular-item__title {
   display: block;
   overflow: hidden;
+  .poster {
+    transition: transform 0.3s;
+    transform: scale(1);
+  }
+}
+
+.popular-item__title {
   .poster {
     transition: transform 0.3s;
     transform: scale(1);
