@@ -61,6 +61,7 @@ export default {
   methods: {
     imgLoaded: function() {
       const img = new Image();
+
       img.src = this.base_url + this.img_size + this.src;
       this.showImg = true;
     }
@@ -70,21 +71,21 @@ export default {
 
 <style lang="scss" scoped>
 .poster {
-  overflow: hidden;
   position: relative;
+  overflow: hidden;
 
   .title {
     left: 0;
-    bottom: 0;
     right: 0;
-    padding: 16px;
+    bottom: 0;
     position: absolute;
-    color: #ffffff;
+    padding: 1em;
     background-color: rgba(45, 52, 54, 0.9);
-    border-top: 2px solid rgba(255, 255, 255, 0.9);
-    box-shadow: 0 5px 5px -5px #000;
+    color: #fff;
     transform: translateY(100%);
     transition: transform 0.3s ease-out;
+    border-top: 2px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 5px 5px -5px #000;
     font-family: "Helvetica Neue", Helvetica, Sans-serif;
   }
 
@@ -107,17 +108,17 @@ export default {
   top: 50%;
   left: 50%;
   padding: 10px;
-  color: #000000;
   position: absolute;
   white-space: nowrap;
   transform: translate(-50%);
+  color: #000;
 }
 
 .background-image {
   width: 100%;
   background-size: contain;
-  background-position: center;
   background-repeat: no-repeat;
+  background-position: center;
 
   &:before {
     content: "";

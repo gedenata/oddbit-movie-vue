@@ -14,28 +14,28 @@ export default {
 
 <style lang="scss" scoped>
 .not-found {
-  display: inline;
   top: 0;
-  bottom: 0;
   left: 0;
-  right: 0;
-  z-index: 1000;
-  color: #000000;
-  position: fixed;
+  display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #ffffff;
+  color: #000;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 3;
+  background-color: #fff;
 }
 
 h4 {
   font-size: 50px;
-  font-weight: 300;
   letter-spacing: 4px;
+  font-weight: 300;
   &:first-letter {
-    font-size: 60px;
-    font-weight: 500;
-    color: #696969;
     display: inline-block;
+    font-size: 60px;
+    color: #636e72;
+    font-weight: 500;
   }
 }
 </style>

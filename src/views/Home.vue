@@ -17,8 +17,8 @@
 import _ from "lodash";
 import { mapGetters } from "vuex";
 
-import Popular from "./../components/Popular";
-import Spinner from "./../components/Spinner";
+import Popular from "@/components/Popular";
+import Spinner from "@/components/Spinner";
 
 export default {
   name: "home",
@@ -79,29 +79,30 @@ export default {
   position: relative;
   padding: 0;
   padding-bottom: 100px;
-  min-height: 666px;
+  min-height: 100vh;
 
   .item {
     height: 100%;
   }
 }
 
-.pupular > li {
+.popular > li {
   list-style: none;
   padding: 0;
   margin: 8px 0;
 }
 
 .release-date {
-  top: 10px;
-  left: 10px;
-  padding: 2px;
-  color: #ffffff;
   position: absolute;
   transform: rotate(-45deg);
   transform-origin: center bottom;
+  top: 10px;
+  left: 10px;
+  padding: 2px;
+  color: white;
   display: inline-block;
-  background-color: #696969;
-  border: 1px solid #ffffff;
+  background-color: #2d3436;
+  border: 1px solid #fff;
+  display: none;
 }
 </style>

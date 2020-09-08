@@ -7,12 +7,12 @@ Vue.use(Router);
 
 export default new Router({
   mode: "history",
-  base: process.env.BASE_URL,
   scrollBehavior: () => ({ x: 0, y: 0 }),
+  base: process.env.BASE_URL,
   routes: [
     {
       path: "*",
-      name: "404",
+      name: "error",
       component: () => import("./views/Error.vue")
     },
     {
@@ -23,7 +23,8 @@ export default new Router({
     {
       path: "/movie/:id",
       name: "movie",
-      component: () => import("./views/Movie.vue")
+      component: () => import("./views/Movie.vue"),
+      props: true
     }
   ]
 });

@@ -37,15 +37,15 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 2;
   display: flex;
   position: fixed;
-  overflow: hidden;
   align-items: center;
   justify-content: center;
+  z-index: 2;
   font-size: 4em;
-  background-color: #fff;
+  overflow: hidden;
   color: #000;
+  background-color: #fff;
 }
 
 h4 {

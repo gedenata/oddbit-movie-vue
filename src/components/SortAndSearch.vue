@@ -39,8 +39,8 @@
 </template>
 
 <script>
-import Search from "./Search";
-import Sorting from "./Sorting";
+import Sorting from "@/components/Sorting";
+import Search from "@/components/Search";
 
 export default {
   props: {
@@ -50,8 +50,8 @@ export default {
     }
   },
   components: {
-    Search,
-    Sorting
+    Sorting,
+    Search
   },
   data: () => ({
     sort: false,
@@ -67,8 +67,8 @@ export default {
       if (this.mode == "mobile") this.$store.dispatch("APP_PADDING", "114px");
     },
     toggleSearch() {
-      this.showSort = false;
       this.showSearch = true;
+      this.showSort = false;
     },
     setDefaults() {
       this.showSort = false;
@@ -113,8 +113,8 @@ export default {
 
 .close-sort-btn {
   align-self: flex-end;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 
 .sort-btn {
@@ -137,14 +137,14 @@ export default {
     left: 0;
     right: 0;
     bottom: 0;
-    opacity: 0;
     width: 100%;
     height: 100%;
+    opacity: 0;
+    content: "";
     position: absolute;
     transition: inherit;
     transition-delay: 150ms;
     background-color: #212121;
-    content: "";
   }
 
   &--active {
@@ -184,18 +184,18 @@ export default {
 }
 
 .toggle-btn {
+  border: 0;
   min-width: 40px;
   min-height: 40px;
+  margin-left: 10px;
+  display: inline-block;
   background-position: center;
   background-repeat: no-repeat;
   transition: background-color 0.3s;
-  display: inline-block;
-  margin-left: 10px;
-  border: 0;
 
   &:hover {
-    cursor: pointer;
     background-color: #c4c4c4;
+    cursor: pointer;
   }
 
   &.active:not(.toggle-btn--close) {
@@ -211,13 +211,13 @@ export default {
   }
 
   &--search {
-    background-size: 16px;
     background-image: url(../assets/search.svg);
+    background-size: 16px;
   }
 
   &--close {
-    background-size: 20px;
     background-image: url(../assets/cancel.svg);
+    background-size: 20px;
     background-color: lightgray;
   }
 }

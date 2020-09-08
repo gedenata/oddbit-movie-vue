@@ -53,23 +53,38 @@ export default {
 }
 
 .overlay {
+  position: fixed;
+  width: 100%;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  width: 100%;
-  z-index: 100;
-  display: flex;
-  position: fixed;
   pointer-events: none;
-  align-content: center;
-  justify-content: center;
   transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-content: center;
 
   &--relative {
+    position: relative;
     height: 100px;
     margin-top: -100px;
-    position: relative;
+  }
+
+  &:before {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    content: "";
+    position: absolute;
+    transition: inherit;
+    transition-delay: 150ms;
+    background-color: #fff;
   }
 
   &--active {
@@ -79,21 +94,6 @@ export default {
     &:before {
       opacity: 1;
     }
-  }
-
-  &:before {
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    opacity: 0;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    transition: inherit;
-    transition-delay: 150ms;
-    background-color: #ffffff;
-    content: "";
   }
 }
 

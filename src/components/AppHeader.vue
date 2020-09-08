@@ -11,8 +11,8 @@
 </template>
 
 <script>
-import Logo from "./Logo";
-import SortAndSearch from "./SortAndSearch";
+import Logo from "@/components/Logo";
+import SortAndSearch from "@/components/SortAndSearch";
 
 export default {
   components: {
@@ -34,14 +34,14 @@ export default {
 
 <style lang="scss" scoped>
 header {
-  padding: 10px 0;
-  background: #fff;
-  box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
-  position: fixed;
-  left: 0;
   top: 0;
+  left: 0;
   right: 0;
   z-index: 1;
+  padding: 10px 0;
+  position: fixed;
+  background: #fff;
+  box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
 }
 
 .back-btn {
@@ -56,8 +56,8 @@ header {
   background-image: url(../assets/undo.svg);
 
   &:hover {
-    cursor: pointer;
     background-color: darken(rgb(221, 221, 221), 10%);
+    cursor: pointer;
   }
 
   &:focus {

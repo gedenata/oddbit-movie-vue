@@ -16,8 +16,8 @@
 </template>
 
 <script>
-import filters from "./../filters";
-import Poster from "./Poster";
+import filters from "@/filters";
+import Poster from "@/components/Poster";
 
 export default {
   name: "popular",
@@ -39,34 +39,30 @@ export default {
 }
 
 .vote {
-  height: 64px;
-  width: 64px;
   top: 0.2em;
   right: 0.2em;
-  color: #ffffff;
-  position: absolute;
+  width: 4em;
+  height: 4em;
   display: flex;
-  align-items: center;
-  justify-content: center;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url(./../assets/star.svg);
+  background-image: url(../assets/star.svg);
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  color: #fff;
 }
 
 .vote > span {
-  color: #ffffff;
-  font-weight: 500;
+  color: #fff;
   padding-top: 0.6em;
+  font-weight: 500;
 }
 
 .popular-item__title {
   display: block;
   overflow: hidden;
-  .poster {
-    transition: transform 0.3s;
-    transform: scale(1);
-  }
 }
 
 .popular-item__title {

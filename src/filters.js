@@ -5,5 +5,4 @@ const filters = {
     return moment(str).format("YYYY.MM.DD");
   }
 };
-
 export default filters;

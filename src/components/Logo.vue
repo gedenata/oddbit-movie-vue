@@ -25,9 +25,9 @@ export default {
 .logo {
   z-index: 0;
   display: inline-flex;
-  position: relative;
   align-items: center;
   text-decoration: none;
+  position: relative;
 
   @media (min-width: 992px) {
     z-index: 1;
@@ -36,15 +36,15 @@ export default {
   &__img {
     top: 4px;
     left: 0;
-    height: 2.4em;
     display: block;
+    height: 2.4em;
     position: absolute;
     transform: scale(1);
     transition: all 0.3s ease-in-out;
   }
 
   &__text {
-    font-size: 32px;
+    font-size: 2em;
     color: #000;
     font-weight: 500;
     white-space: nowrap;
@@ -54,7 +54,6 @@ export default {
       bottom: -4px;
       width: 0.8em;
       content: "O";
-      color: #636e72;
       display: block;
       position: absolute;
       font-size: 1.6em;
@@ -62,6 +61,7 @@ export default {
       text-align: center;
       transform: scale(0);
       transition: all 0.3s ease-in-out;
+      color: #636e72;
     }
 
     &:first-letter {

@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import Http from "./../api";
+import HTTP from "@/http";
 
 export default {
   data: () => ({
@@ -53,9 +53,10 @@ export default {
       });
       this.defaults();
     },
+
     async search() {
       try {
-        const { data } = await Http.get("/search/movie", {
+        const { data } = await HTTP.get("/search/movie", {
           params: {
             query: escape(this.inputText)
           }
@@ -65,19 +66,23 @@ export default {
         return e;
       }
     },
+
     selectUp() {
       if (this.selected === 0) return;
       else this.selected -= 1;
       this.showSelected();
     },
+
     selectDown() {
       if (this.selected === this.optionsLength - 1) return;
       this.selected += 1;
       this.showSelected();
     },
+
     showSelected() {
       this.inputText = this.options[this.selected].title;
     },
+
     toggleSearch() {
       this.expand = !this.expand;
       this.expand
@@ -100,24 +105,23 @@ export default {
   width: 40px;
   height: 40px;
   outline: none;
-  cursor: pointer;
-  display: inline-block;
   margin-left: 0px;
+  display: inline-block;
   background-size: 24px;
   background-position: center;
   background-repeat: no-repeat;
-  background-repeat: no-repeat;
   background-image: url("../assets/cancel.svg");
+  cursor: pointer;
 
   &--active {
-    background-size: 50%;
     background-image: url("../assets/search.svg");
+    background-size: 50%;
   }
 }
 
 .search {
-  width: 100%;
   display: flex;
+  width: 100%;
   position: relative;
   justify-content: flex-end;
 
@@ -127,12 +131,12 @@ export default {
   }
 
   input {
-    outline: none;
     display: block;
     box-sizing: border-box;
-    transform-origin: right;
     backface-visibility: hidden;
     transition: 0.3s ease-in-out all;
+    transform-origin: right;
+    outline: none;
     border: 1px solid rgba(0, 0, 0, 0.2);
 
     &:focus {
@@ -142,23 +146,24 @@ export default {
 }
 
 .list {
+  padding: 0;
+  position: absolute;
   top: 40px;
   left: 0;
   width: 100%;
-  padding: 0;
-  position: absolute;
   background-color: #fff;
   box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.117647);
 }
 
 .item {
+  list-style: none;
   padding: 0 16px;
   overflow: hidden;
-  list-style: none;
   text-align: left;
   line-height: 40px;
   white-space: nowrap;
   text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .selected {
@@ -166,11 +171,11 @@ export default {
 }
 
 input {
-  width: 100%;
-  height: 40px;
-  line-height: 40px;
-  padding: 0 16px;
   display: block;
+  line-height: 40px;
+  width: 100%;
+  padding: 0 1em;
+  height: 40px;
   box-sizing: border-box;
 }
 

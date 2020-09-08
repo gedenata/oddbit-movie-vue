@@ -12,15 +12,15 @@
 <script>
 import { mapGetters } from "vuex";
 
-import AppHeader from "@/components/AppHeader";
 import Spinner from "@/components/Spinner";
 import ErrorMsg from "@/components/ErrorMsg";
+import AppHeader from "@/components/AppHeader";
 
 export default {
   components: {
-    AppHeader,
     Spinner,
-    ErrorMsg
+    ErrorMsg,
+    AppHeader
   },
   computed: {
     ...mapGetters(["main_spinner", "showError", "appPadding"])
@@ -48,7 +48,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 #app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

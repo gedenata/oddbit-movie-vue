@@ -58,10 +58,10 @@
 
 <script>
 import { mapState } from "vuex";
-import filters from "@/filters";
 
-import Poster from "./../components/Poster";
-import Similar from "./../components/Similar";
+import filters from "@/filters";
+import Poster from "@/components/Poster";
+import Similar from "@/components/Similar";
 
 export default {
   name: "movie",
@@ -97,10 +97,10 @@ export default {
 .details {
   h2 {
     padding: 0;
-    font-size: 32px;
+    font-size: 2em;
     @media (min-width: 992px) {
-      padding-top: 16px;
-      padding-bottom: 16px;
+      padding-top: 1em;
+      padding-bottom: 1em;
     }
   }
   margin-bottom: 100px;
@@ -117,26 +117,20 @@ export default {
   padding: 0;
 
   > li {
-    margin: 0;
-    padding: 0;
     list-style: none;
     text-align: center;
+    padding: 0;
+    margin: 0;
     position: relative;
   }
 
   > .title {
-    font-size: 16px;
     text-align: center;
+    font-size: 1em;
   }
 
   > .name {
     font-size: 14px;
-  }
-}
-
-.genres-list {
-  li {
-    margin: 10px;
   }
 }
 
@@ -146,43 +140,43 @@ export default {
   }
 }
 
+.genres-list {
+  li {
+    margin: 10px;
+  }
+}
+
 .description-list p {
-  font-size: 16px;
+  padding: 1em 0 0;
   text-align: left;
-  padding: 16px 0 0;
   margin-bottom: 0;
+  font-size: 1em;
   @media (min-width: 992px) {
-    font-size: 22px;
+    font-size: 1.4em;
   }
 }
 
 .info {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
+  flex-wrap: wrap;
 
   dl {
     padding: 0;
-    color: #636e72;
+    color: rgba(99, 110, 114, 1);
   }
 
   dt {
-    padding: 0 16px;
-    font-size: 16px;
+    padding: 0 1em;
+    font-size: 1em;
   }
 
   dd {
-    font-size: 24px;
-    font-weight: 700;
-    padding: 0 16px;
+    padding: 0 1em;
+    font-size: 1.5em;
     display: inline-block;
     letter-spacing: 2px;
-  }
-}
-
-.production-list {
-  &:before {
-    background: #ffffff;
+    font-weight: 700;
   }
 }
 
@@ -190,17 +184,23 @@ export default {
   margin-bottom: 20px;
 }
 
-.tag {
-  color: #ffffff;
-  padding: 10px 20px;
-  display: inline-block;
-  background-color: #636e72;
-}
-
 .thumb {
   width: 60px;
   .background-image {
     background-color: transparent;
   }
+}
+
+.production-list {
+  &:before {
+    background-color: #fff;
+  }
+}
+
+.tag {
+  background-color: #636e72;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #fff;
 }
 </style>

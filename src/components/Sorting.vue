@@ -50,8 +50,8 @@ export default {
   },
   data: () => ({
     selected_year: null,
-    selected_sort_variant: null,
-    sorting_options: SORT_VARIANTS
+    sorting_options: SORT_VARIANTS,
+    selected_sort_variant: null
   }),
   computed: {
     ...mapGetters(["sort_options", "toggleSort"]),
@@ -104,13 +104,13 @@ export default {
 }
 
 .v-select {
-  height: 40px;
   min-width: 25%;
   border-bottom: 1px solid rgba(60, 60, 60, 0.26);
+  height: 40px;
 
   @media (min-width: 992px) {
-    width: 100%;
     max-width: 25%;
+    width: 100%;
   }
 
   .vs__selected-options {
@@ -118,9 +118,9 @@ export default {
   }
 
   .dropdown-menu {
-    border-radius: 0;
     padding-top: 0;
     padding-bottom: 0;
+    border-radius: 0;
     li:hover a {
       background-color: #dddddd;
     }
@@ -128,30 +128,41 @@ export default {
 }
 
 .v-select li > a {
-  color: #333;
-  margin: 0;
-  clear: both;
-  display: block;
-  padding: 0 20px;
-  font-size: 14px;
   text-align: left;
+  padding: 0 20px;
   line-height: 40px;
-  white-space: nowrap;
+  font-size: 14px;
+  margin: 0;
+}
+
+.v-select .dropdown-menu .highlight a {
+  background: #dddddd;
+  color: #000;
 }
 
 .v-select li {
   line-height: 40px;
 }
 
+.v-select li > a {
+  display: block;
+  padding: 0px 20px;
+  clear: both;
+  color: #333;
+  white-space: nowrap;
+  font-size: 15px;
+  line-height: 40px;
+}
+
 .v-select .selected-tag {
-  margin: 0;
+  border: 1px solid #ccc;
+  border-radius: 0;
   color: #000;
+  margin: 0;
+  transition: opacity 0.25s;
   font-size: 14px;
   padding-left: 13px;
-  border-radius: 0;
   background: none;
-  border: 1px solid #ccc;
-  transition: opacity 0.25s;
 }
 
 .v-select li:hover {
@@ -162,21 +173,21 @@ export default {
   background: none;
 }
 
-.v-select .dropdown-menu .highlight a {
-  color: #000000;
+.dropdown-menu > li > a:hover {
   background: #dddddd;
+  color: #000 !important;
 }
 
 .v-select .dropdown-menu .active a {
   color: #000;
   background: #dddddd;
   display: block;
-  overflow: hidden;
-  margin: 0;
   height: 40px;
   line-height: 40px;
-  white-space: nowrap;
   text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0;
 }
 
 .v-select .dropdown-toggle {
@@ -192,11 +203,6 @@ export default {
   text-overflow: ellipsis;
 }
 
-.dropdown-menu > li > a:hover {
-  background: #dddddd;
-  color: #000 !important;
-}
-
 .sort-list {
   background-color: rgba(255, 255, 255, 1);
 }
@@ -209,14 +215,15 @@ export default {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1;
   width: 100%;
-  max-width: 480px;
+  position: fixed;
   min-height: 0px;
+  max-width: 480px;
   margin-left: auto;
   margin-right: auto;
-  position: fixed;
+  z-index: 1;
   padding: 0 20px 20px;
+  background-color: lightgray;
   background-color: #fff;
   box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
 
@@ -231,7 +238,7 @@ export default {
 }
 
 ul {
-  top: 0;
+  top: 0px;
   left: 0;
   right: 0;
   padding: 0 0 2em;
@@ -268,17 +275,17 @@ li {
 }
 
 .btn {
-  color: #636e72;
-  background: #fff;
   background-color: #fff;
-  border-color: #dfe6e9;
-  border: 2px solid transparent;
   transition: all 0.3s;
+  border: 2px solid transparent;
+  border-color: #dfe6e9;
+  background: #fff;
+  color: #636e72;
 
   &.active,
   &.active:hover {
-    font-weight: 600;
     background-color: #dfe6e9;
+    font-weight: 600;
   }
 }
 
