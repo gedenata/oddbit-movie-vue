@@ -1,1 +1,1 @@
-import Poster from "@/components/Poster";
+// import Poster from "@/components/Poster.vue";

@@ -1,1 +1,1 @@
-import Similar from "@/components/Similar";
+// import Similar from "@/components/Similar.vue";
